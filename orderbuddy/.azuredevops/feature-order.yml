@@ -1,0 +1,52 @@
+trigger:
+  branches:
+    include:
+      # Trigger on any branch starting with features/
+      - features/** 
+  paths:
+    include:
+      - src/order/**
+
+pool:
+  vmImage: ubuntu-latest
+
+  variables:
+    - group: dev
+
+steps:
+  # Step 1: Set up Node.js
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '16.x'
+      checkLatest: true
+
+  # Step 2: Install dependencies
+  - script: |
+      cd src/order
+      npm ci
+    displayName: 'Install dependencies'
+
+ # Build the app using Vite (via npm script)
+  - script: |
+      cd src/order
+      npm run build 
+    displayName: 'Build Vite Project'
+    continueOnError: false
+
+  # Copy Apple Pay domain verification file
+  - script: |
+      cd src/order
+      mkdir -p dist/.well-known
+      cp apple-verification-files/apple-developer-merchantid-domain-association.gravity dist/.well-known/apple-developer-merchantid-domain-association
+    displayName: 'Postbuild: Copy Apple Pay Verification File'
+
+  # Step 4: Deploy to Azure Static Web App
+  - task: AzureStaticWebApp@0
+    continueOnError: false
+    inputs:
+      azure_static_web_apps_api_token: $(azure_static_web_apps_api_token_order)
+      app_location: 'src/order'
+      api_location: ''
+      output_location: 'dist'
+      app_build_command: 'npm run build'
+      api_build_command: 'rm -rf ./node_modules/@next/swc-* && rm -rf ./.next/cache'

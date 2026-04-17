@@ -1,0 +1,62 @@
+<mjml>
+  <mj-head>
+    <mj-title>QR Code Link for {{originName}}</mj-title>
+    <mj-style>
+      .qr-code-container { padding: 20px; background-color: #f9f9f9; border-radius: 8px; margin-bottom: 20px; }
+      .button-container { padding: 10px 0; } .footer { color: #666; font-size: 12px; }
+    </mj-style>
+  </mj-head>
+  <mj-body background-color="#f4f4f4">
+    <mj-section padding="20px 0">
+      <mj-column>
+        <mj-image width="150px" src="https://storage.googleapis.com/orderbuddy-dev/logo/orderbuddy-logo.png"></mj-image>
+      </mj-column>
+    </mj-section>
+
+    <mj-section background-color="#ffffff" padding="20px">
+      <mj-column>
+        <mj-text font-size="20px" color="#000000" font-weight="bold">QR Code Link for {{originName}}</mj-text>
+        <mj-divider border-color="#dedede"></mj-divider>
+
+        <mj-text font-size="16px" color="#333333" padding-top="20px">Hello from {{restaurantName}},</mj-text>
+
+        <mj-text font-size="16px" color="#333333">
+          You requested the QR code link for
+          <strong>{{originName}}</strong>
+          at
+          <strong>{{locationName}}</strong>
+          .
+        </mj-text>
+
+        <mj-text font-size="16px" color="#333333">Here is your link to access the QR code:</mj-text>
+
+        <mj-button background-color="#5C6BC0" color="white" href="{{qrCodeUrl}}" border-radius="4px" font-weight="bold">
+          Access QR Code
+        </mj-button>
+
+        <mj-image width="200px" src="{{qrCodeImageUrl}}" alt="QR Code"></mj-image>
+
+        <mj-text font-size="14px" color="#666666" padding-top="10px">Or copy this URL:</mj-text>
+
+        <mj-text font-size="14px" color="#0066CC">{{qrCodeUrl}}</mj-text>
+
+        <mj-text font-size="16px" color="#333333" padding-top="20px">
+          This link will allow customers to easily access your menu and ordering system at your
+          <strong>{{originType}}</strong>
+        </mj-text>
+
+        <mj-divider border-color="#dedede" padding-top="20px"></mj-divider>
+
+        <mj-text font-size="14px" color="#666666" align="center" padding-top="10px">
+          This is an automated message from OrderBuddy. Please do not reply to this email.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section>
+      <mj-column>
+        <mj-text font-size="12px" color="#999999" align="center">&copy; 2025 OrderBuddy. All rights reserved.</mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

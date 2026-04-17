@@ -1,0 +1,217 @@
+{
+  "_id": "stacked_up_menu_v1",
+  "restaurantId": "stacked_up",
+  "name": "Stacked Up Menu",
+  "type": "standard",
+  "locales": [
+    "en"
+  ],
+  "schedule": {
+    "type": "time",
+    "rules": {
+      "timezone": "America/Los_Angeles",
+      "windows": [
+        {
+          "days": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sat",
+            "Sun"
+          ],
+          "start": "11:00",
+          "end": "22:00"
+        }
+      ]
+    }
+  },
+  "categories": [
+    {
+      "_id": "burgers",
+      "name": {
+        "en": "Burgers"
+      },
+      "description": {
+        "en": "Signature and custom burgers grilled to order"
+      },
+      "image": "https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_1280.jpg",
+      "sortOrder": 1
+    },
+    {
+      "_id": "sides",
+      "name": {
+        "en": "Sides"
+      },
+      "description": {
+        "en": "Fries, onion rings, and more"
+      },
+      "image": "https://cdn.pixabay.com/photo/2016/03/05/19/02/french-fries-1238247_1280.jpg",
+      "sortOrder": 2
+    },
+    {
+      "_id": "drinks",
+      "name": {
+        "en": "Drinks"
+      },
+      "description": {
+        "en": "Sodas, shakes, and bottled beverages"
+      },
+      "image": "https://cdn.pixabay.com/photo/2017/06/30/18/33/milkshake-2456648_1280.jpg",
+      "sortOrder": 3
+    }
+  ],
+  "items": [
+    {
+      "id": "classic_cheeseburger",
+      "names": {
+        "en": "Classic Cheeseburger"
+      },
+      "descriptions": {
+        "en": "Beef patty, cheddar, lettuce, tomato, house sauce"
+      },
+      "offers": {
+        "priceCents": 895,
+        "currency": "USD"
+      },
+      "availability": {
+        "isAvailable": true
+      },
+      "modifiers": [
+        "burger_add_ons"
+      ],
+      "category": "burgers",
+      "tags": [
+        "beef",
+        "cheese",
+        "grilled"
+      ]
+    },
+    {
+      "id": "bbq_bacon_burger",
+      "names": {
+        "en": "BBQ Bacon Burger"
+      },
+      "descriptions": {
+        "en": "Beef, crispy bacon, BBQ sauce, onion rings"
+      },
+      "offers": {
+        "priceCents": 995,
+        "currency": "USD"
+      },
+      "availability": {
+        "isAvailable": true
+      },
+      "modifiers": [
+        "burger_add_ons"
+      ],
+      "category": "burgers",
+      "tags": [
+        "bbq",
+        "bacon"
+      ]
+    },
+    {
+      "id": "veggie_burger",
+      "names": {
+        "en": "Veggie Burger"
+      },
+      "descriptions": {
+        "en": "Plant-based patty, lettuce, tomato, vegan mayo"
+      },
+      "offers": {
+        "priceCents": 875,
+        "currency": "USD"
+      },
+      "availability": {
+        "isAvailable": true
+      },
+      "category": "burgers",
+      "tags": [
+        "vegan",
+        "vegetarian",
+        "grilled"
+      ]
+    },
+    {
+      "id": "fries",
+      "names": {
+        "en": "Fries"
+      },
+      "descriptions": {
+        "en": "Crispy golden fries with sea salt"
+      },
+      "offers": {
+        "priceCents": 350,
+        "currency": "USD"
+      },
+      "availability": {
+        "isAvailable": true
+      },
+      "category": "sides",
+      "tags": [
+        "vegan",
+        "crispy"
+      ]
+    },
+    {
+      "id": "milkshake",
+      "names": {
+        "en": "Vanilla Milkshake"
+      },
+      "descriptions": {
+        "en": "Thick vanilla shake topped with whipped cream"
+      },
+      "offers": {
+        "priceCents": 495,
+        "currency": "USD"
+      },
+      "availability": {
+        "isAvailable": true
+      },
+      "category": "drinks",
+      "tags": [
+        "cold",
+        "dairy"
+      ]
+    }
+  ],
+  "modifiers": [
+    {
+      "id": "burger_add_ons",
+      "name": {
+        "en": "Add-ons"
+      },
+      "required": false,
+      "options": [
+        {
+          "id": "extra_cheese",
+          "label": {
+            "en": "Extra Cheese"
+          },
+          "priceCents": 100,
+          "isAvailable": true
+        },
+        {
+          "id": "jalapenos",
+          "label": {
+            "en": "Jalape\u00f1os"
+          },
+          "priceCents": 75,
+          "isAvailable": true
+        },
+        {
+          "id": "avocado",
+          "label": {
+            "en": "Avocado"
+          },
+          "priceCents": 150,
+          "isAvailable": true
+        }
+      ]
+    }
+  ],
+  "createdAt": "2025-04-22T06:29:29.998921Z",
+  "updatedAt": "2025-04-22T06:29:29.998925Z"
+}

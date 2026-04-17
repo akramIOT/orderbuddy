@@ -1,0 +1,167 @@
+{
+  "_id": "cuppa_co_all_day_v1",
+  "restaurantId": "cuppa_co",
+  "name": "Cuppa Co Menu",
+  "type": "standard",
+  "locales": [
+    "en"
+  ],
+  "schedule": {
+    "type": "time",
+    "rules": {
+      "timezone": "America/Los_Angeles",
+      "windows": [
+        {
+          "days": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sat",
+            "Sun"
+          ],
+          "start": "06:00",
+          "end": "23:00"
+        }
+      ]
+    }
+  },
+  "categories": [
+    {
+      "_id": "coffee",
+      "name": {
+        "en": "Coffee"
+      },
+      "description": {
+        "en": "All espresso and brewed coffee options"
+      },
+      "image": "https://cdn.pixabay.com/photo/2016/11/29/04/17/coffee-1869656_1280.jpg",
+      "sortOrder": 1
+    },
+    {
+      "_id": "breakfast",
+      "name": {
+        "en": "Breakfast"
+      },
+      "description": {
+        "en": "Morning-only hot food and sandwiches"
+      },
+      "image": "https://cdn.pixabay.com/photo/2017/08/06/00/03/coffee-2589756_1280.jpg",
+      "sortOrder": 2
+    },
+    {
+      "_id": "baked",
+      "name": {
+        "en": "Baked Goods"
+      },
+      "description": {
+        "en": "Pastries, muffins, and croissants"
+      },
+      "image": "https://cdn.pixabay.com/photo/2015/07/02/10/23/coffee-828527_1280.jpg",
+      "sortOrder": 3
+    }
+  ],
+  "items": [
+    {
+      "id": "espresso",
+      "names": {
+        "en": "Espresso"
+      },
+      "descriptions": {
+        "en": "Strong and smooth single shot of espresso"
+      },
+      "offers": {
+        "priceCents": 250,
+        "currency": "USD"
+      },
+      "availability": {
+        "isAvailable": true
+      },
+      "modifiers": [
+        "size_basic",
+        "add_ons"
+      ],
+      "category": "coffee",
+      "tags": [
+        "hot",
+        "caffeinated"
+      ]
+    },
+    {
+      "id": "latte",
+      "names": {
+        "en": "Latte"
+      },
+      "descriptions": {
+        "en": "Espresso and steamed milk, with optional flavor shots"
+      },
+      "offers": {
+        "priceCents": 400,
+        "currency": "USD"
+      },
+      "availability": {
+        "isAvailable": true
+      },
+      "modifiers": [
+        "size_basic",
+        "milk_types",
+        "syrups"
+      ],
+      "category": "coffee",
+      "tags": [
+        "hot",
+        "customizable",
+        "milk"
+      ]
+    },
+    {
+      "id": "egg_cheese_biscuit",
+      "names": {
+        "en": "Egg & Cheese Biscuit"
+      },
+      "descriptions": {
+        "en": "Fluffy biscuit with scrambled egg and cheddar cheese"
+      },
+      "offers": {
+        "priceCents": 475,
+        "currency": "USD"
+      },
+      "availability": {
+        "isAvailable": true
+      },
+      "modifiers": [
+        "breakfast_add_ons"
+      ],
+      "category": "breakfast",
+      "tags": [
+        "sandwich",
+        "vegetarian"
+      ]
+    },
+    {
+      "id": "blueberry_muffin",
+      "names": {
+        "en": "Blueberry Muffin"
+      },
+      "descriptions": {
+        "en": "Soft muffin bursting with blueberries"
+      },
+      "offers": {
+        "priceCents": 325,
+        "currency": "USD"
+      },
+      "availability": {
+        "isAvailable": true
+      },
+      "category": "baked",
+      "tags": [
+        "sweet",
+        "pastry"
+      ]
+    }
+  ],
+  "modifiers": [],
+  "createdAt": "2025-04-22T06:23:48.469386Z",
+  "updatedAt": "2025-04-22T06:23:48.469391Z"
+}

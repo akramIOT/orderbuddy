@@ -1,0 +1,17 @@
+{
+    "routes": [
+      {
+        "route": "/assets/*",
+        "headers": {
+          "cache-control": "must-revalidate, max-age=15770000"
+        }
+      }
+    ],
+    "navigationFallback": {
+      "rewrite": "/index.html",
+      "exclude": ["/assets/*.{png,jpg,gif,svg,js,css}", "/*.{ico,json}"]
+    },
+    "mimeTypes": {
+      ".json": "text/json"
+    }
+  }

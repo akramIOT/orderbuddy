@@ -1,0 +1,25 @@
+# Auto-normalize line endings
+* text=auto
+
+# Explicitly treat these as text
+*.ts text
+*.tsx text
+*.js text
+*.json text
+*.md text
+*.html text
+*.css text
+*.yml text
+
+# Treat images & media as binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.mp4 binary
+
+# Disable diff on lockfiles (optional)
+package-lock.json -diff
+pnpm-lock.yaml -diff

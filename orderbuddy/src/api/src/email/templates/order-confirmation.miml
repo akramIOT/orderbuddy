@@ -1,0 +1,13 @@
+<mjml>
+  <mj-body>
+    <mj-section>
+      <mj-column>
+        <mj-text font-size="20px" color="#333333">Order Confirmation</mj-text>
+        <mj-text>Hello {{name}},</mj-text>
+        <mj-text>Your order #{{orderNumber}} has been confirmed.</mj-text>
+        <mj-text>Total: ${{total}}</mj-text>
+        <mj-button href="https://orderbuddy.app/orders/{{orderNumber}}" background-color="#F45E43">View Order</mj-button>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

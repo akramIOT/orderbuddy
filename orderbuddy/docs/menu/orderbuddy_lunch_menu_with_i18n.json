@@ -1,0 +1,160 @@
+{
+  //create index for these 3 fields
+  "_id": {
+    "restaurantId": "tropical_berry",
+    "locationId": "seattle",
+    "menuId": "lunch_menu"
+  },
+  "name": {
+    "en": "Lunch Menu",
+    "es": "Men\u00fa de Almuerzo",
+    "pt": "Card\u00e1pio de Almo\u00e7o"
+  },
+  "tags": ["dine_in", "food_court"],
+  "schedule": {
+    "type": "time",
+    "rules": {
+      "start": "11:00",
+      "end": "15:00",
+      "time": "America/Los_Angeles",
+      "days": ["mon", "tue", "wed", "thu", "fri"]
+    }
+  },
+  "serviceFeeCents": 0,
+  "categories": [
+    {
+      "id": "bowls",
+      "name": {
+        "en": "Bowls",
+        "es": "Tazones",
+        "pt": "Tigelas"
+      },
+      "description": {
+        "en": "Fresh and customizable acai and smoothie bowls.",
+        "es": "Tazones de a\u00e7a\u00ed y batidos frescos y personalizables.",
+        "pt": "Tigelas de a\u00e7a\u00ed e smoothies frescos e personaliz\u00e1veis."
+      },
+      "imageUrl": "https://example.com/images/categories/bowls.jpg"
+    }
+  ],
+  "items": [
+    {
+      "id": "acai_bowl",
+      "name": {
+        "en": "Acai Bowl",
+        "es": "Taz\u00f3n de A\u00e7a\u00ed",
+        "pt": "Tigela de A\u00e7a\u00ed"
+      },
+      "description": {
+        "en": "Organic Brazilian acai, with fruits, granola, condensed milk and powdered milk.",
+        "es": "A\u00e7a\u00ed brasile\u00f1o org\u00e1nico, con frutas, granola, leche condensada y leche en polvo.",
+        "pt": "A\u00e7a\u00ed brasileiro org\u00e2nico, com frutas, granola, leite condensado e leite em p\u00f3."
+      },
+      "imageUrls": ["https://example.com/images/acai_bowl.jpg"],
+      "categoryId": "bowls",
+      "priceCents": 995,
+      "makingCostCents": 450,
+      "isAvailable": true,
+      "stationTags": ["smoothie"],
+      "variants": [
+        {
+          "id": "small",
+          "name": "Small",
+          "priceCents": 795
+        },
+        {
+          "id": "medium",
+          "name": "Medium",
+          "priceCents": 995,
+          "default": true
+        },
+        {
+          "id": "large",
+          "name": "Large",
+          "priceCents": 1195
+        }
+      ],
+      "modifiers": [
+        {
+          "id": "toppings",
+          "name": {
+            "en": "Choose Your Toppings",
+            "es": "Elige tus ingredientes",
+            "pt": "Escolha suas coberturas"
+          },
+          "type": "standard", //todo: standard, upsell
+          "required": false,
+          "selectionMode": "max",
+          "maxChoices": 5,
+          "freeChoices": 3,
+          "extraChoicePriceCents": 50,
+          "options": [
+            {
+              "id": "banana",
+              "name": {
+                "en": "Banana"
+              },
+              "priceCents": 0
+            },
+            {
+              "id": "blueberry",
+              "name": {
+                "en": "Blueberry"
+              },
+              "priceCents": 0
+            },
+            {
+              "id": "strawberry",
+              "name": {
+                "en": "Strawberry"
+              },
+              "priceCents": 0
+            },
+            {
+              "id": "mango",
+              "name": {
+                "en": "Mango"
+              },
+              "priceCents": 0
+            },
+            {
+              "id": "granola",
+              "name": {
+                "en": "Granola"
+              },
+              "priceCents": 0
+            }
+          ]
+        },
+        {
+          "id": "add_ons",
+          "name": {
+            "en": "Add-ons",
+            "es": "Complementos",
+            "pt": "Adicionais"
+          },
+          "type": "upsell",
+          "required": false,
+          "selectionMode": "max",
+          "maxChoices": 2,
+          "options": [
+            {
+              "id": "peanut_butter",
+              "name": {
+                "en": "Peanut Butter"
+              },
+              "priceCents": 100
+            },
+            {
+              "id": "almond_butter",
+              "name": {
+                "en": "Almond Butter"
+              },
+              "priceCents": 100
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

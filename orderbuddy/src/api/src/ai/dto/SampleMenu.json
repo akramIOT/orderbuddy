@@ -1,0 +1,717 @@
+{
+    "_id": {
+      "$oid": "683359e3d838d658d6cc1743"
+    },
+    "restaurantId": "tropical_berry_translation_test",
+    "locationId": "kenmore",
+    "menuId": "all_day",
+    "name": {
+      "en": "All Day Menu"
+    },
+    "tags": [
+      "dine_in"
+    ],
+    "schedule": {
+      "type": "time",
+      "rules": {
+        "start": "06:00",
+        "end": "23:00",
+        "time": "America/Los_Angeles",
+        "days": [
+          "mon",
+          "tue",
+          "wed",
+          "thu",
+          "fri",
+          "sat",
+          "sun"
+        ]
+      }
+    },
+    "categories": [
+      {
+        "id": "Salgados",
+        "name": {
+          "en": "Brazilian Pastries"
+        },
+        "description": {
+          "en": "Brazilian Pastries"
+        },
+        "imageUrl": "",
+        "sortOrder": 1,
+        "emoji": "🇧🇷"
+      },
+      {
+        "id": "Juice",
+        "name": {
+          "en": "Juice"
+        },
+        "description": {
+          "en": "One Size 160z"
+        },
+        "imageUrl": "",
+        "sortOrder": 2,
+        "emoji": "🍓"
+      },
+      {
+        "id": "sandwiches_and_pastries",
+        "name": {
+          "en": "Sandwiches & Pastries"
+        },
+        "description": {
+          "en": "Made with crisp French Bread warm out of the oven"
+        },
+        "imageUrl": "",
+        "sortOrder": 3,
+        "emoji": "🥪"
+      },
+      {
+        "id": "real_fruit_smoothies",
+        "name": {
+          "en": "Real Fruit Smoothies"
+        },
+        "description": {
+          "en": "Real Fruit Smoothies"
+        },
+        "imageUrl": "",
+        "sortOrder": 4,
+        "emoji": "🍌"
+      },
+      {
+        "id": "organic_acai_bowls",
+        "name": {
+          "en": "Organic Acai Bowls"
+        },
+        "description": {
+          "en": "Authentic Organic Brazilian Acai"
+        },
+        "imageUrl": "",
+        "sortOrder": 5,
+        "emoji": "🥣"
+      },
+      {
+        "id": "pastel",
+        "name": {
+          "en": "Pastel"
+        },
+        "description": {
+          "en": "Brazilian Empanadas"
+        },
+        "imageUrl": "",
+        "sortOrder": 6,
+        "emoji": "🥟"
+      },
+      {
+        "id": "combos",
+        "name": {
+          "en": "Combos"
+        },
+        "description": {
+          "en": "Pastel + Fresh Juice"
+        },
+        "imageUrl": "",
+        "sortOrder": 7,
+        "emoji": "🎁"
+      }
+    ],
+    "items": [
+      {
+        "id": "frango-catupiry-orange-juice",
+        "name": {
+          "en": "Chicken Catupiry + Orange Juice"
+        },
+        "description": {
+          "en": "Chicken Catupiry with Fresh Orange Juice combo"
+        },
+        "imageUrls": [
+          "https://hubblestorage.blob.core.windows.net/tropical-berry-images-prod/Pastel&Hand.png"
+        ],
+        "categoryId": "combos",
+        "priceCents": 1500,
+        "makingCostCents": 800,
+        "isAvailable": true,
+        "stationTags": [
+          "acai-kitchen"
+        ]
+      },
+      {
+        "id": "strawberry-banana",
+        "name": {
+          "en": "Strawberry Banana"
+        },
+        "description": {
+          "en": "Fresh strawberry and banana smoothie"
+        },
+        "imageUrls": [
+          "https://hubblestorage.blob.core.windows.net/tropical-berry-images-prod/StrawberryBanana.png"
+        ],
+        "categoryId": "real_fruit_smoothies",
+        "priceCents": 799,
+        "makingCostCents": 350,
+        "isAvailable": true,
+        "stationTags": [
+          "acai-kitchen"
+        ]
+      },
+      {
+        "id": "beef-pastrami",
+        "name": {
+          "en": "Beef Pastrami"
+        },
+        "description": {
+          "en": "Lettuce, Tomatoes, Onions, Mozzarella, Cheese, Home-Made green sauce"
+        },
+        "imageUrls": [
+          "https://hubblestorage.blob.core.windows.net/tropical-berry-images-prod/Beef Pastrami.png"
+        ],
+        "categoryId": "sandwiches_and_pastries",
+        "priceCents": 1180,
+        "makingCostCents": 500,
+        "isAvailable": true,
+        "stationTags": [
+          "sandwich-kitchen"
+        ]
+      },
+      {
+        "id": "carne-queijo-sugarcane-juice",
+        "name": {
+          "en": "Carne & Queijo + Sugarcane Juice"
+        },
+        "description": {
+          "en": "Carne & Queijo with Fresh Sugarcane Juice combo"
+        },
+        "imageUrls": [
+          "https://hubblestorage.blob.core.windows.net/tropical-berry-images-prod/PastelSugarcane Combo.png"
+        ],
+        "categoryId": "combos",
+        "priceCents": 1500,
+        "makingCostCents": 800,
+        "isAvailable": true,
+        "stationTags": [
+          "acai-kitchen"
+        ]
+      },
+      {
+        "id": "bauru-sandwich",
+        "name": {
+          "en": "Bauru Sandwich"
+        },
+        "description": {
+          "en": "Smoked ham, Tomatoes, Mozzarella cheese, Requeijao (Brazilian cream cheese)"
+        },
+        "imageUrls": [
+          "https://hubblestorage.blob.core.windows.net/tropical-berry-images-prod/Bauru Sandwiche.png"
+        ],
+        "categoryId": "sandwiches_and_pastries",
+        "priceCents": 1080,
+        "makingCostCents": 500,
+        "isAvailable": true,
+        "stationTags": [
+          "sandwich-kitchen"
+        ]
+      },
+      {
+        "id": "queijo-catupiry-orange-juice",
+        "name": {
+          "en": "Queijo Catupiry + Orange Juice"
+        },
+        "description": {
+          "en": "Queijo Catupiry with Fresh Orange Juice combo"
+        },
+        "imageUrls": [
+          "https://hubblestorage.blob.core.windows.net/tropical-berry-images-prod/PastelLaranja.png"
+        ],
+        "categoryId": "combos",
+        "priceCents": 1500,
+        "makingCostCents": 800,
+        "isAvailable": true,
+        "stationTags": [
+          "acai-kitchen"
+        ]
+      },
+      {
+        "id": "frango-catupiry-sugarcane-juice",
+        "name": {
+          "en": "Frango Catupiry + Sugarcane Juice"
+        },
+        "description": {
+          "en": "Frango Catupiry with Fresh Sugarcane Juice combo"
+        },
+        "imageUrls": [
+          "https://hubblestorage.blob.core.windows.net/tropical-berry-images-prod/Pastel&Hand.png"
+        ],
+        "categoryId": "combos",
+        "priceCents": 1500,
+        "makingCostCents": 800,
+        "isAvailable": true,
+        "stationTags": [
+          "acai-kitchen"
+        ]
+      },
+      {
+        "id": "queijo-catupiry-sugarcane-juice",
+        "name": {
+          "en": "Queijo Catupiry + Sugarcane Juice"
+        },
+        "description": {
+          "en": "Queijo Catupiry with Fresh Sugarcane Juice combo"
+        },
+        "imageUrls": [
+          "https://hubblestorage.blob.core.windows.net/tropical-berry-images-prod/PastelLaranja.png"
+        ],
+        "categoryId": "combos",
+        "priceCents": 1500,
+        "makingCostCents": 800,
+        "isAvailable": true,
+        "stationTags": [
+          "acai-kitchen"
+        ]
+      },
+      {
+        "id": "queijo-catupiry",
+        "name": {
+          "en": "Queijo Catupiry"
+        },
+        "description": {
+          "en": "Mozzarella & Brazilian Cream Cheese"
+        },
+        "imageUrls": [
+          "https://hubblestorage.blob.core.windows.net/tropical-berry-images-prod/Pastel.jpg"
+        ],
+        "categoryId": "pastel",
+        "priceCents": 799,
+        "makingCostCents": 400,
+        "isAvailable": true,
+        "stationTags": [
+          "pastry-kitchen"
+        ]
+      },
+      {
+        "id": "acai-bowls",
+        "name": {
+          "en": "Acai Bowls"
+        },
+        "description": {
+          "en": "Organic, pure, authentic acai from Brazilian Amazon Rainforest"
+        },
+        "imageUrls": [
+          "https://hubblestorage.blob.core.windows.net/tropical-berry-images-prod/Medium Acai Bowl.png"
+        ],
+        "categoryId": "organic_acai_bowls",
+        "priceCents": 1099,
+        "makingCostCents": 500,
+        "isAvailable": true,
+        "stationTags": [
+          "acai-kitchen"
+        ],
+        "variants": [
+          {
+            "id": "small",
+            "name": "Small",
+            "priceCents": 1099,
+            "default": true
+          },
+          {
+            "id": "medium",
+            "name": "Medium",
+            "priceCents": 1299
+          },
+          {
+            "id": "large",
+            "name": "Large",
+            "priceCents": 1599
+          },
+          {
+            "id": "king",
+            "name": "King",
+            "priceCents": 1799
+          }
+        ],
+        "modifiers": [
+          {
+            "id": "toppings",
+            "name": {
+              "en": "Toppings"
+            },
+            "type": "standard",
+            "required": false,
+            "selectionMode": "multiple",
+            "maxChoices": 5,
+            "freeChoices": 4,
+            "extraChoicePriceCents": 50,
+            "options": [
+              {
+                "id": "blueberry",
+                "name": {
+                  "en": "Blueberry"
+                },
+                "priceCents": 0
+              },
+              {
+                "id": "strawberry",
+                "name": {
+                  "en": "Strawberry"
+                },
+                "priceCents": 0
+              },
+              {
+                "id": "banana",
+                "name": {
+                  "en": "Banana"
+                },
+                "priceCents": 0
+              },
+              {
+                "id": "kiwi",
+                "name": {
+                  "en": "Kiwi"
+                },
+                "priceCents": 0
+              },
+              {
+                "id": "pineapple",
+                "name": {
+                  "en": "Pineapple"
+                },
+                "priceCents": 0
+              },
+              {
+                "id": "granola",
+                "name": {
+                  "en": "Granola"
+                },
+                "priceCents": 0
+              },
+              {
+                "id": "powdered-milk",
+                "name": {
+                  "en": "Powdered Milk"
+                },
+                "priceCents": 0
+              },
+              {
+                "id": "condensed-milk",
+                "name": {
+                  "en": "Condensed Milk"
+                },
+                "priceCents": 0
+              },
+              {
+                "id": "almond-butter",
+                "name": {
+                  "en": "Almond Butter"
+                },
+                "priceCents": 0
+              },
+              {
+                "id": "peanut-butter",
+                "name": {
+                  "en": "Peanut Butter"
+                },
+                "priceCents": 0
+              }
+            ]
+          },
+          {
+            "id": "add_ons",
+            "name": {
+              "en": "Add-ons"
+            },
+            "type": "standard",
+            "required": false,
+            "selectionMode": "single",
+            "maxChoices": 1,
+            "freeChoices": 0,
+            "extraChoicePriceCents": 100,
+            "options": [
+              {
+                "id": "bee_sure_protein",
+                "name": {
+                  "en": "Bee Sure Protein"
+                },
+                "priceCents": 100
+              },
+              {
+                "id": "whey_protein",
+                "name": {
+                  "en": "Whey Protein"
+                },
+                "priceCents": 100
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "pastry-mix-bowl",
+        "name": {
+          "en": "Pastry Mix Bowl"
+        },
+        "description": {
+          "en": "10 Pcs, Co-Sheen-Ya, Ground Beef, Ham & Cheese, Mozzarella"
+        },
+        "imageUrls": [
+          "https://hubblestorage.blob.core.windows.net/tropical-berry-images-prod/Pastry Mix Bowl.png"
+        ],
+        "categoryId": "Salgados",
+        "priceCents": 999,
+        "makingCostCents": 500,
+        "isAvailable": true,
+        "stationTags": [
+          "pastry-kitchen"
+        ]
+      },
+      {
+        "id": "carne-queijo-orange-juice",
+        "name": {
+          "en": "Carne & Queijo + Orange Juice"
+        },
+        "description": {
+          "en": "Carne & Queijo with Fresh Orange Juice combo"
+        },
+        "imageUrls": [
+          "https://hubblestorage.blob.core.windows.net/tropical-berry-images-prod/PastelSugarcane Combo.png"
+        ],
+        "categoryId": "combos",
+        "priceCents": 1500,
+        "makingCostCents": 800,
+        "isAvailable": true,
+        "stationTags": [
+          "acai-kitchen"
+        ]
+      },
+      {
+        "id": "pineapple-banana",
+        "name": {
+          "en": "Pineapple Banana"
+        },
+        "description": {
+          "en": "Fresh pineapple and banana smoothie"
+        },
+        "imageUrls": [
+          "https://hubblestorage.blob.core.windows.net/tropical-berry-images-prod/Pineaple Banana.png"
+        ],
+        "categoryId": "real_fruit_smoothies",
+        "priceCents": 799,
+        "makingCostCents": 350,
+        "isAvailable": true,
+        "stationTags": [
+          "acai-kitchen"
+        ]
+      },
+      {
+        "id": "peanut-butter-banana",
+        "name": {
+          "en": "Peanut Butter Banana"
+        },
+        "description": {
+          "en": "Peanut Butter Banana smoothie"
+        },
+        "imageUrls": [
+          "https://hubblestorage.blob.core.windows.net/tropical-berry-images-prod/Peanut Butter Banana.png"
+        ],
+        "categoryId": "real_fruit_smoothies",
+        "priceCents": 799,
+        "makingCostCents": 350,
+        "isAvailable": true,
+        "stationTags": [
+          "acai-kitchen"
+        ]
+      },
+      {
+        "id": "misto",
+        "name": {
+          "en": "Misto"
+        },
+        "description": {
+          "en": "Smoked ham, Mozzarella cheese, Requeijao (Brazilian cream cheese)"
+        },
+        "imageUrls": [
+          "https://hubblestorage.blob.core.windows.net/tropical-berry-images-prod/Misto Quente.png"
+        ],
+        "categoryId": "sandwiches_and_pastries",
+        "priceCents": 1000,
+        "makingCostCents": 500,
+        "isAvailable": true,
+        "stationTags": [
+          "sandwich-kitchen"
+        ]
+      },
+      {
+        "id": "frango-catupiry",
+        "name": {
+          "en": "Frango Catupiry"
+        },
+        "description": {
+          "en": "Chicken & Brazilian Cream Cheese"
+        },
+        "imageUrls": [
+          "https://hubblestorage.blob.core.windows.net/tropical-berry-images-prod/Pastel.jpg"
+        ],
+        "categoryId": "pastel",
+        "priceCents": 799,
+        "makingCostCents": 400,
+        "isAvailable": true,
+        "stationTags": [
+          "sandwich-kitchen"
+        ]
+      },
+      {
+        "id": "acai-pineapple-blueberry",
+        "name": {
+          "en": "Acai Pineapple Blueberry"
+        },
+        "description": {
+          "en": "Acai Pineapple Blueberry"
+        },
+        "imageUrls": [
+          "https://hubblestorage.blob.core.windows.net/tropical-berry-images-prod/AcaiPineapleBlueberry.png"
+        ],
+        "categoryId": "real_fruit_smoothies",
+        "priceCents": 799,
+        "makingCostCents": 350,
+        "isAvailable": true,
+        "stationTags": [
+          "acai-kitchen"
+        ]
+      },
+      {
+        "id": "churros",
+        "name": {
+          "en": "Churros"
+        },
+        "description": {
+          "en": "5 Pcs, Dulce de Leche Caramel Fillings"
+        },
+        "imageUrls": [
+          "https://hubblestorage.blob.core.windows.net/tropical-berry-images-prod/Churros.png"
+        ],
+        "categoryId": "Salgados",
+        "priceCents": 999,
+        "makingCostCents": 400,
+        "isAvailable": true,
+        "stationTags": [
+          "pastry-kitchen"
+        ]
+      },
+      {
+        "id": "fresh-orange-juice",
+        "name": {
+          "en": "Fresh Orange Juice"
+        },
+        "description": {
+          "en": "Fresh squeezed orange juice"
+        },
+        "imageUrls": [
+          "https://hubblestorage.blob.core.windows.net/tropical-berry-images-prod/Orange Juice.png"
+        ],
+        "categoryId": "Juice",
+        "priceCents": 750,
+        "makingCostCents": 300,
+        "isAvailable": true,
+        "stationTags": [
+          "juice-station"
+        ]
+      },
+      {
+        "id": "carne-queijo",
+        "name": {
+          "en": "Carne & Queijo"
+        },
+        "description": {
+          "en": "Ground Beef & Mozzarella Cheese"
+        },
+        "imageUrls": [
+          "https://hubblestorage.blob.core.windows.net/tropical-berry-images-prod/Pastel.jpg"
+        ],
+        "categoryId": "pastel",
+        "priceCents": 799,
+        "makingCostCents": 400,
+        "isAvailable": true,
+        "stationTags": [
+          "sandwich-kitchen"
+        ]
+      },
+      {
+        "id": "fresh-sugarcane-juice",
+        "name": {
+          "en": "Fresh Sugarcane Juice"
+        },
+        "description": {
+          "en": "Fresh squeezed Sugarcane juice"
+        },
+        "imageUrls": [
+          "https://hubblestorage.blob.core.windows.net/tropical-berry-images-prod/Sugarcane juice.png"
+        ],
+        "categoryId": "Juice",
+        "priceCents": 780,
+        "makingCostCents": 350,
+        "isAvailable": true,
+        "stationTags": [
+          "juice-station"
+        ]
+      },
+      {
+        "id": "co-sheen-ya",
+        "name": {
+          "en": "Co-Sheen-Ya"
+        },
+        "description": {
+          "en": "Co-sheen-ya"
+        },
+        "imageUrls": [
+          "https://hubblestorage.blob.core.windows.net/tropical-berry-images-prod/CO-SHEEN-YA.jpeg"
+        ],
+        "categoryId": "Salgados",
+        "priceCents": 650,
+        "makingCostCents": 300,
+        "isAvailable": true,
+        "stationTags": [
+          "pastry-kitchen"
+        ]
+      },
+      {
+        "id": "pastel-sugarcane-juice",
+        "name": {
+          "en": "Pastel + Sugarcane Juice"
+        },
+        "description": {
+          "en": "Pastel with Fresh Sugarcane Juice combo"
+        },
+        "imageUrls": [
+          "https://hubblestorage.blob.core.windows.net/tropical-berry-images-prod/Pastel-Caldo-de-Cana-Sugarcane-Juice.png"
+        ],
+        "categoryId": "combos",
+        "priceCents": 1500,
+        "makingCostCents": 800,
+        "isAvailable": true,
+        "stationTags": [
+          "acai-kitchen"
+        ]
+      },
+      {
+        "id": "pastel-orange-juice",
+        "name": {
+          "en": "Pastel + Orange Juice"
+        },
+        "description": {
+          "en": "Pastel with Fresh Orange Juice combo"
+        },
+        "imageUrls": [
+          "https://hubblestorage.blob.core.windows.net/tropical-berry-images-prod/Pastel-Suco-de-Laranja-Orange-Juice.png"
+        ],
+        "categoryId": "combos",
+        "priceCents": 1500,
+        "makingCostCents": 800,
+        "isAvailable": true,
+        "stationTags": [
+          "acai-kitchen"
+        ]
+      }
+    ],
+    "createdAt": "2025-05-15T06:13:48.469386Z",
+    "updatedAt": "2025-05-15T06:13:48.469391Z",
+    "salesTax": 6.5,
+    "available": true,
+    "needsTranslation": true
+  }

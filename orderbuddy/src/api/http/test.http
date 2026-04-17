@@ -1,0 +1,59 @@
+@baseUrl = http://localhost:8002
+@contentType = application/json
+
+### Menu Controller ###
+
+### Get Restaurant by ID
+GET {{baseUrl}}/menu-app/cuppa_co
+Content-Type: {{contentType}}
+
+### Get Menu by Restaurant ID
+GET {{baseUrl}}/menu-app/menu/cuppa_co_all_day_v1
+Content-Type: {{contentType}}
+
+### Create Order
+POST {{baseUrl}}/menu-app/store/order
+Content-Type: {{contentType}}
+
+{
+  "restaurantId": "123",
+  "paymentId":"234",
+  "station": {
+    "id": "station1",
+    "name": "Table 1"
+  },
+  "customer": {
+    "name": "John Doe",
+    "phone": "+1234567890"
+  },
+  "items": [
+    {
+      "id": "item1",
+      "menuItemId": "menu1",
+      "name": "Burger",
+      "price": 9.99,
+      "variants": [
+        {
+          "id": "var1",
+          "name": "Large"
+        }
+      ],
+      "modifiers": [
+        {
+          "id": "mod1",
+          "options": [
+            {
+              "name": "Extra Cheese"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "getSms": true
+}
+
+### Get Order Status
+GET {{baseUrl}}/menu-app/order/681b1c6255a41dbefe3516f1
+Content-Type: {{contentType}}
+

@@ -1,0 +1,72 @@
+{
+  "_id": "tropical_berry",
+  "name": "Tropical Berry",
+  "concept": "Smoothie caf\u00e9 with bowls and drinks",
+  "logo": "https://cdn.orderbuddy.app/brands/tropical_berry/logo.png",
+  "createdAt": "2025-04-01T12:00:00Z",
+  "updatedAt": "2025-05-01T15:00:00Z",
+  "locations": [
+    {
+      "id": "seattle_main",
+      "name": "Seattle \u2013 Main",
+      "address": "123 Pine St, Seattle, WA",
+      "timezone": "America/Los_Angeles",
+      "isActive": true,
+      "contact": {
+        "phone": "206-555-1212",
+        "email": "seattle@tropicalberry.com"
+      },
+      "geo": {
+        "lat": 47.6062,
+        "lng": -122.3321
+      },
+      "menus": [
+        {
+          "id": "lunch_menu",
+          "name": "Lunch Menu",
+          "schedule": {
+            "type": "time",
+            "rules": {
+              "start": "11:00",
+              "end": "15:00"
+            }
+          }
+        },
+        {
+          "id": "food_court_menu",
+          "name": "Food Court Express",
+          "schedule": {
+            "type": "location",
+            "rules": {
+              "locationTag": "food_court"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "bellevue_truck",
+      "name": "Bellevue Food Truck",
+      "address": "456 Market St, Bellevue, WA",
+      "timezone": "America/Los_Angeles",
+      "isActive": true,
+      "contact": {
+        "phone": "425-555-6789",
+        "email": "truck@tropicalberry.com"
+      },
+      "geo": {
+        "lat": 47.6101,
+        "lng": -122.2015
+      },
+      "menus": [
+        {
+          "id": "truck_menu",
+          "name": "Truck Menu",
+          "schedule": {
+            "type": "manual"
+          }
+        }
+      ]
+    }
+  ]
+}

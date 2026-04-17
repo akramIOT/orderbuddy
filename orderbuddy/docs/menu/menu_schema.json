@@ -1,0 +1,203 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Menu",
+  "type": "object",
+  "required": [
+    "_id",
+    "restaurantId",
+    "name",
+    "type",
+    "schedule",
+    "items",
+    "categories",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "_id": {
+      "type": "string"
+    },
+    "restaurantId": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "standard",
+        "prix_fixe",
+        "tasting",
+        "custom"
+      ]
+    },
+    "locales": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "schedule": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "time",
+            "location",
+            "manual"
+          ]
+        },
+        "rules": {
+          "type": "object"
+        }
+      }
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "_id",
+          "name"
+        ],
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "object"
+          },
+          "description": {
+            "type": "object"
+          },
+          "image": {
+            "type": "string",
+            "format": "uri"
+          },
+          "sortOrder": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "names",
+          "offers",
+          "availability",
+          "category"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "names": {
+            "type": "object"
+          },
+          "descriptions": {
+            "type": "object"
+          },
+          "offers": {
+            "type": "object",
+            "properties": {
+              "priceCents": {
+                "type": "number"
+              },
+              "currency": {
+                "type": "string"
+              }
+            }
+          },
+          "availability": {
+            "type": "object",
+            "properties": {
+              "isAvailable": {
+                "type": "boolean"
+              },
+              "reason": {
+                "type": "string"
+              }
+            }
+          },
+          "modifiers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "category": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "modifiers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "options"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "object"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "label",
+                "priceCents",
+                "isAvailable"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "object"
+                },
+                "priceCents": {
+                  "type": "number"
+                },
+                "isAvailable": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

@@ -1,0 +1,266 @@
+/* app.tsx */
+.mobile-container {
+  margin: 0 auto;
+  max-width: 480px;
+  background: #fff;
+}
+
+/* StoreClosedBanner.tsx */
+
+/* category.tsx */
+.sticky-categories {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
+  padding: 8px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.categories-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.categories-container::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Opera */
+}
+
+.categories-row {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0 16px;
+  gap: 8px;
+}
+
+.category-item {
+  padding: 8px 16px;
+  background: var(--ion-color-light);
+  border-radius: 20px;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.category-item.selected {
+  background: var(--ion-color-primary);
+}
+
+.category-item.selected ion-text {
+  color: white !important;
+}
+
+.categories-button {
+  margin: 8px 16px;
+  --border-radius: 8px;
+  font-weight: 500;
+}
+
+/* menu item modal */
+
+.menu-item-modal-content {
+  padding: 16px;
+}
+
+.item-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-details h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.item-details p {
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.variants-section {
+  margin-bottom: 16px;
+}
+
+.modifier-group {
+  margin-bottom: 16px;
+}
+
+.modifier-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.modifier-info {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.option-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.option-price {
+  color: #666;
+}
+
+.total-price {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.add-to-cart-button {
+  --background: var(--ion-color-primary);
+}
+
+/* paymenform  */
+.backgroundTextField {
+  background-color: white;
+}
+#cardNumberContainer,
+#expirationDateContainer,
+#securityCodeContainer {
+  height: 55px;
+  margin: 4px 0;
+  width: 100%;
+  /* display: flex;
+  justify-content: center; */
+}
+
+/* Label styling */
+.payment-label {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+/* component css */
+
+.lilita-one-regular {
+  font-family: 'Lilita One', serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: x-large;
+}
+.navbar-color {
+  /* background-color: #5A189A; */
+}
+.font-size-18 {
+  font-size: 18px;
+}
+.width {
+  width: 100%;
+}
+
+.card-element {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.pay {
+  --background-activated: rgb(219, 208, 208);
+}
+
+* {
+  color: #424242;
+  --ion-text-color: #424242;
+}
+
+ion-badge {
+  --background: #424242;
+  color: white;
+}
+
+.custom-action-sheet {
+  --background: #fff;
+  --color: #424242;
+}
+ion-button {
+  --border-color: #a7a7a7;
+  --color: #424242;
+  text-transform: capitalize;
+}
+
+.solid-button {
+  --background: #6d6d6d;
+  --color: #fff;
+  color: #fff;
+  text-transform: capitalize;
+}
+.font-size-18 {
+  font-size: 18px;
+}
+.font-size-14 {
+  font-size: 14px;
+}
+
+ion-checkbox {
+  --checkbox-background-checked: #424242;
+}
+
+ion-checkbox::part(container) {
+  border: 1px solid #424242;
+}
+
+.link-color {
+  color: #424242;
+  text-decoration: underline;
+  font-weight: 800;
+}
+
+.end-gap-cover {
+  --inner-padding-end: 0px;
+}
+
+.force-outline-button {
+  --background: transparent;
+  --border-color: #424242;
+  --color: #424242;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-shadow: none;
+}
+ion-segment-button {
+  --indicator-color: #898484;
+}
+
+/* Material Design styles */
+ion-segment-button.md {
+  --color: #898484;
+  --color-checked: #898484;
+  --indicator-height: 2px;
+}
+
+ion-input.custom {
+  --placeholder-color: #898484;
+  --highlight-color-focused: #898484;
+}
+
+.font-size-17 {
+  font-size: 17px;
+}
+
+.ion-text {
+  color: white;
+  --ion-text-color: white;
+}
+
+.payment-icon {
+  color: white !important;
+  fill: white !important;
+}

@@ -1,0 +1,52 @@
+{
+  "_id": "cuppa_co",
+  "name": "Cuppa Co",
+  "concept": "Coffee shop and breakfast bar",
+  "logo": "https://cdn.pixabay.com/photo/2016/11/29/04/17/coffee-1869656_1280.jpg",
+  "createdAt": "2025-04-22T06:23:48.468851Z",
+  "updatedAt": "2025-04-22T06:23:48.468862Z",
+  "locations": [
+    {
+      "id": "lynnwood",
+      "name": "Cuppa Co Lynnwood",
+      "address": "3000 184th St SW, Lynnwood, WA 98037",
+      "timezone": "America/Los_Angeles",
+      "contact": {
+        "phone": "555-123-4567",
+        "email": "contact@cuppaco.demo"
+      },
+      "geo": {
+        "lat": 47.8302,
+        "lng": -122.2756
+      },
+      "isActive": true,
+      "menus": [
+        {
+          "id": "cuppa_co_all_day_v1",
+          "name": "All-Day Menu",
+          "schedule": {
+            "type": "time",
+            "rules": {
+              "timezone": "America/Los_Angeles",
+              "windows": [
+                {
+                  "days": [
+                    "Mon",
+                    "Tue",
+                    "Wed",
+                    "Thu",
+                    "Fri",
+                    "Sat",
+                    "Sun"
+                  ],
+                  "start": "06:00",
+                  "end": "23:00"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

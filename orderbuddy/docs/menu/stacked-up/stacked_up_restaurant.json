@@ -1,0 +1,52 @@
+{
+  "_id": "stacked_up",
+  "name": "Stacked Up",
+  "concept": "Craft burgers and sides",
+  "logo": "https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_1280.jpg",
+  "createdAt": "2025-04-22T06:29:29.998550Z",
+  "updatedAt": "2025-04-22T06:29:29.998557Z",
+  "locations": [
+    {
+      "id": "seattle_main",
+      "name": "Stacked Up Seattle",
+      "address": "1200 1st Ave, Seattle, WA 98101",
+      "timezone": "America/Los_Angeles",
+      "contact": {
+        "phone": "555-987-6543",
+        "email": "hello@stackedup.demo"
+      },
+      "geo": {
+        "lat": 47.6062,
+        "lng": -122.3321
+      },
+      "isActive": true,
+      "menus": [
+        {
+          "id": "stacked_up_menu_v1",
+          "name": "Main Menu",
+          "schedule": {
+            "type": "time",
+            "rules": {
+              "timezone": "America/Los_Angeles",
+              "windows": [
+                {
+                  "days": [
+                    "Mon",
+                    "Tue",
+                    "Wed",
+                    "Thu",
+                    "Fri",
+                    "Sat",
+                    "Sun"
+                  ],
+                  "start": "11:00",
+                  "end": "22:00"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

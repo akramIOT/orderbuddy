@@ -1,0 +1,7 @@
+{
+  "name": "manage",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}

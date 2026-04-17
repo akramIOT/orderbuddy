@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">OrderBuddy</string>
+    <string name="title_activity_main">OrderBuddy</string>
+    <string name="package_name">com.orderbuddy.app</string>
+    <string name="custom_url_scheme">com.orderbuddy.app</string>
+    <string name="azure_monitor_connection_string" translatable="false">InstrumentationKey=7af84511-b2c1-4160-acf3-9cc7a576fc16;IngestionEndpoint=https://centralus-2.in.applicationinsights.azure.com/;LiveEndpoint=https://centralus.livediagnostics.monitor.azure.com/;ApplicationId=5c270ffb-7d51-4f11-8d8c-b39415ff9005</string>
+</resources>

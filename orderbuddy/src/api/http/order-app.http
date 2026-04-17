@@ -1,0 +1,17 @@
+@baseUrl = http://localhost:8002
+@contentType = application/json
+
+### get entry info
+GET {{baseUrl}}/order-app/restaurants/cuppa_co/locations/lynnwood/origins/table_1/entry-info
+Content-Type: {{contentType}}
+
+### get menus
+GET {{baseUrl}}/order-app/restaurants/cuppa_co/locations/lynnwood/menus
+Content-Type: {{contentType}}
+
+### get menu
+GET {{baseUrl}}/order-app/restaurants/cuppa_co/locations/lynnwood/menus/all_day
+Content-Type: {{contentType}}
+
+
+

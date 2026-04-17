@@ -1,0 +1,12 @@
+<mjml>
+  <mj-body>
+    <mj-section>
+      <mj-column>
+        <mj-text font-size="20px" color="#333333">Welcome to OrderBuddy!</mj-text>
+        <mj-text>Hello {{name}},</mj-text>
+        <mj-text>Thank you for signing up with OrderBuddy. We're excited to have you onboard!</mj-text>
+        <mj-button href="https://orderbuddy.app" background-color="#F45E43">Visit Our Site</mj-button>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

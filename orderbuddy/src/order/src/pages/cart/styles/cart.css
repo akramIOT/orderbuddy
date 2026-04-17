@@ -1,0 +1,14 @@
+.discount-text {
+  color: #2dd36f; /* Green color for discount */
+  font-weight: 600;
+}
+
+.font-weight-bold {
+  font-weight: 700;
+}
+
+.cart-total-row {
+  padding-top: 8px;
+  border-top: 1px solid #f0f0f0;
+  margin-top: 8px;
+}

@@ -1,0 +1,33 @@
+.empty-campaign-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+.empty-campaign-content {
+  max-width: 400px;
+}
+
+.empty-campaign-image {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 1rem;
+}
+
+.empty-campaign-content h2 {
+  margin-bottom: 0.5rem;
+  color: var(--ion-color-dark);
+}
+
+.empty-campaign-content p {
+  margin-bottom: 2rem;
+  color: var(--ion-color-medium);
+}
+
+.create-campaign-button {
+  margin-top: 1rem;
+}

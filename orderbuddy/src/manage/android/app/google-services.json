@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "541162236361",
+    "project_id": "order-buddy-f2fe2",
+    "storage_bucket": "order-buddy-f2fe2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:541162236361:android:476d2c724c62001884a018",
+        "android_client_info": {
+          "package_name": "com.orderbuddy.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVi7YE-Z3ZN8BUgNYAYN8WjjQyLgGMMpE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
