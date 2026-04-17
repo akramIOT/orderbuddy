@@ -1,0 +1,40 @@
+name: Checkout API (Python)
+
+on:
+  push:
+    paths:
+      - "orderbuddy/checkout-api/**"
+      - ".github/workflows/checkout-api-ci.yml"
+  pull_request:
+    paths:
+      - "orderbuddy/checkout-api/**"
+
+defaults:
+  run:
+    working-directory: orderbuddy/checkout-api
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: orderbuddy/checkout-api/requirements-dev.txt
+
+      - name: Install dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Pytest
+        run: pytest -q
+
+      - name: OpenAPI export (smoke)
+        run: python scripts/export_openapi.py | python -c "import json,sys; json.load(sys.stdin)"
