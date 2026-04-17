@@ -8,7 +8,7 @@ from app.config import settings
 from app.deps import get_checkout_service
 from app.schemas.checkout import CheckoutFormDto, OrderConfirmationDto
 from app.services.checkout_service import CheckoutService
-from app.services.payment import PaymentCircuitBreaker, PaymentGatewayClient
+from app.services.payment_gateway import CheckoutPaymentClient, PaymentCircuitBreaker
 
 
 @asynccontextmanager
@@ -20,8 +20,8 @@ async def lifespan(app: FastAPI):
         failure_threshold=settings.circuit_failure_threshold,
         open_seconds=settings.circuit_open_seconds,
     )
-    payments = PaymentGatewayClient(settings, http, breaker)
-    app.state.checkout_service = CheckoutService(db, payments)
+    payments = CheckoutPaymentClient(settings, http, breaker)
+    app.state.checkout_service = CheckoutService(db, payments, settings)
     app.state.mongo_client = mongo
     app.state.http_client = http
     yield

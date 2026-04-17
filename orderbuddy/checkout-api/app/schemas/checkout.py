@@ -24,6 +24,11 @@ class CheckoutFormDto(BaseModel):
     items: list[CartItemInput]
     paymentMethod: Literal["card", "wallet"]
     customerInfo: CustomerInfoDto
+    # Optional: Emergepay hosted-fields token when `payment_provider=emergepay` (Python extension).
+    transactionToken: str | None = Field(
+        default=None,
+        description="Emergepay transaction token from start-transaction / client SDK (required for emergepay provider)",
+    )
 
     @field_validator("menuId", "originId")
     @classmethod

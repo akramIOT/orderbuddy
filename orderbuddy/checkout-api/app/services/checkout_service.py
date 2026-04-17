@@ -7,12 +7,15 @@ from typing import Any
 from bson import ObjectId
 from bson.errors import InvalidId
 from fastapi import HTTPException
+from fastapi.encoders import jsonable_encoder
 from motor.motor_asyncio import AsyncIOMotorDatabase
 from pydantic import ValidationError
 
-from app.db.collections import MENUS, ORDERS, ORIGINS
+from app.config import Settings
+from app.db.collections import LOCATIONS, MENUS, ORDERS, ORIGINS
 from app.schemas.checkout import CheckoutFormDto, OrderConfirmationDto
-from app.services.payment import CircuitOpenError, PaymentGatewayClient
+from app.services.payment_gateway import CheckoutPaymentClient, CircuitOpenError, EmergepayCredentials
+from app.services.pricing import line_total_cents
 
 
 def _oid(s: str, field: str) -> ObjectId:
@@ -30,11 +33,40 @@ def _location_id_str(doc: dict[str, Any]) -> str:
 
 
 class CheckoutService:
-    """Async checkout: validates menu/origin, availability, payment, then persists order."""
+    """Async checkout: validates menu/origin, availability, modifiers, payment, then persists order."""
 
-    def __init__(self, db: AsyncIOMotorDatabase, payments: PaymentGatewayClient) -> None:
+    def __init__(self, db: AsyncIOMotorDatabase, payments: CheckoutPaymentClient, settings: Settings) -> None:
         self._db = db
         self._payments = payments
+        self._settings = settings
+
+    async def _resolve_emergepay_credentials(self, menu: dict[str, Any]) -> EmergepayCredentials | None:
+        env = self._settings.emergepay_environment_url
+        if not env:
+            return None
+
+        if not self._settings.emergepay_credentials_from_location:
+            oid, tok = self._settings.emergepay_oid, self._settings.emergepay_auth_token
+            if oid and tok:
+                return EmergepayCredentials(environment_url=env, oid=oid, auth_token=tok)
+            return None
+
+        lid = menu.get("locationId")
+        rid = menu.get("restaurantId")
+        if lid is None or rid is None:
+            return None
+
+        q: dict[str, Any] = {"restaurantId": rid}
+        q["_id"] = ObjectId(str(lid)) if not isinstance(lid, ObjectId) else lid
+
+        loc = await self._db[LOCATIONS].find_one(q, projection={"payment": 1})
+        if not loc:
+            return None
+        pay = loc.get("payment") or {}
+        oid, tok = pay.get("oid"), pay.get("auth")
+        if oid and tok:
+            return EmergepayCredentials(environment_url=env, oid=str(oid), auth_token=str(tok))
+        return None
 
     async def checkout(self, dto: CheckoutFormDto) -> OrderConfirmationDto:
         menu_oid = _oid(dto.menuId, "menuId")
@@ -70,16 +102,36 @@ class CheckoutService:
                 },
             )
         except ValidationError as e:
-            raise HTTPException(status_code=422, detail=e.errors()) from e
+            raise HTTPException(status_code=422, detail=jsonable_encoder(e.errors())) from e
 
         total_cents = 0
         for line in dto.items:
             row = items_by_id[line.menuItemId]
-            total_cents += int(row.get("priceCents", 0)) * line.quantity
+            try:
+                total_cents += line_total_cents(
+                    int(row.get("priceCents", 0)),
+                    line.quantity,
+                    line.modifiers,
+                    row,
+                )
+            except ValueError as e:
+                raise HTTPException(status_code=422, detail=str(e)) from e
 
         order_id = ObjectId()
         created_at = datetime.now(timezone.utc).isoformat()
         order_ref = str(order_id)
+
+        emergepay_creds: EmergepayCredentials | None = None
+        if (
+            not self._settings.payment_gateway_mock
+            and self._settings.payment_provider == "emergepay"
+        ):
+            emergepay_creds = await self._resolve_emergepay_credentials(menu)
+            if emergepay_creds is None:
+                raise HTTPException(
+                    status_code=500,
+                    detail="Emergepay is configured but credentials could not be resolved (config or location.payment)",
+                )
 
         try:
             pay = await self._payments.authorize_checkout(
@@ -87,9 +139,13 @@ class CheckoutService:
                 amount_cents=total_cents,
                 order_ref=order_ref,
                 payload_extra={"originId": dto.originId, "menuId": dto.menuId},
+                emergepay=emergepay_creds,
+                transaction_token=dto.transactionToken,
             )
         except CircuitOpenError as e:
             raise HTTPException(status_code=503, detail="payment gateway unavailable") from e
+        except ValueError as e:
+            raise HTTPException(status_code=422, detail=str(e)) from e
 
         if isinstance(pay, dict) and pay.get("status") == "declined":
             raise HTTPException(status_code=402, detail="payment declined")
