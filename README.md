@@ -12,14 +12,6 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload --port 8081
 ```
 
-## Assessment artifacts
-
-- **`migration.docx`** — migration strategy (Part 2–style architectural notes)
-- **`Senior Python Engineer.pdf`** — assessment brief (local copy)
-
-## Diagrams (draw.io / diagrams.net)
-
-Open **`system.xml`** (system context) or **`sequence.xml`** (checkout call sequence) at [app.diagrams.net](https://app.diagrams.net) via **File → Open from… → Device**.
 
 ## Security
 
