@@ -62,13 +62,38 @@ pytest -q
 
 `pytest.ini` sets `pythonpath` so imports resolve from this directory.
 
-## Export OpenAPI for comparison with Nest
+## OpenAPI / Swagger parity (Nest vs FastAPI)
 
-Useful for diffing against the Nest `/swagger` document:
+Formal comparison checks that **`POST */checkout`** request and **200** response JSON Schemas align between the Nest export and this app (after normalizing titles/descriptions).
+
+### 1. Export FastAPI spec
 
 ```bash
-python scripts/export_openapi.py > openapi-checkout.json
+python scripts/export_openapi.py -o openapi/fastapi-openapi.json
 ```
+
+### 2. Export Nest spec (API must be running)
+
+With the Nest API up (default port from `orderbuddy/src/api` env, often `8002`), OpenAPI JSON is usually at **`/swagger-json`**:
+
+```bash
+python scripts/fetch_openapi.py "http://localhost:8002/swagger-json" -o openapi/nest-openapi.json
+```
+
+If your install uses another path, use the URL shown in Nest’s Swagger UI (browser devtools → Network) or the [`SwaggerModule` docs](https://docs.nestjs.com/openapi/introduction).
+
+> If `checkout` is missing from the Nest export, add `@ApiBody`, `@ApiOkResponse`, and `@ApiProperty` on the DTOs/controller so Swagger includes the operation.
+
+### 3. Compare
+
+```bash
+python scripts/compare_openapi.py openapi/nest-openapi.json openapi/fastapi-openapi.json
+```
+
+- Exit code **0** = structural match for checkout request/response schemas.
+- **`--strict`**: fail if FastAPI-only fields (e.g. optional `transactionToken`) are present.
+
+Generated JSON under `openapi/` is gitignored by default; keep local snapshots or commit a baseline if your team prefers.
 
 ## Project layout
 
@@ -83,6 +108,10 @@ app/
     pricing.py         # Menu line + modifier pricing
 tests/
 scripts/export_openapi.py
+scripts/fetch_openapi.py
+scripts/compare_openapi.py
+app/openapi_compare.py
+openapi/.gitignore
 ```
 
 ## CI

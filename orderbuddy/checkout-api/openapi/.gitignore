@@ -1,0 +1,4 @@
+# Generated OpenAPI snapshots (optional local copies)
+nest-openapi.json
+fastapi-openapi.json
+*.openapi.json
