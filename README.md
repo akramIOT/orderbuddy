@@ -12,6 +12,10 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload --port 8081
 ```
 
+## Documents
+
+- **`migration.docx`** — migration strategy (architecture / assessment Part 2)
+- **`reasoning.docx`** — performance reasoning vs original Nest checkout; Python file roles
 
 ## Security
 

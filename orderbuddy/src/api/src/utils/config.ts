@@ -10,7 +10,12 @@ export const validationSchema = Joi.object({
   TAX_RATE: Joi.number().required(),
   EMERGEPAY_ENVIRONMENT_URL: Joi.string().uri().required(),
   FIREBASE_PROJECT_ID: Joi.string().required(),
-  FIREBASE_PRIVATE_KEY: Joi.string().required(),
+  // Allow empty when USEEMULATOR=true (local OpenAPI / checkout smoke tests without Firebase).
+  FIREBASE_PRIVATE_KEY: Joi.when('USEEMULATOR', {
+    is: 'true',
+    then: Joi.string().allow(''),
+    otherwise: Joi.string().min(1).required(),
+  }),
   FIREBASE_CLIENT_EMAIL: Joi.string().email().required(),
   NODE_ENV: Joi.string().valid('development', 'production', 'test', 'local').required(),
   USEEMULATOR: Joi.string().valid('true', 'false').required(),
