@@ -17,6 +17,14 @@ PYTHON_ONLY_BODY_FIELDS = frozenset({"transactionToken"})
 
 
 def load_spec(path: Path) -> dict[str, Any]:
+    if not path.is_file():
+        raise FileNotFoundError(
+            f"OpenAPI file not found: {path.resolve()}\n"
+            "  Nest: start the API, then:\n"
+            '    python scripts/fetch_openapi.py "http://localhost:PORT/swagger-json" -o openapi/nest-openapi.json\n'
+            "  FastAPI:\n"
+            "    python scripts/export_openapi.py -o openapi/fastapi-openapi.json"
+        )
     with path.open(encoding="utf-8") as f:
         return json.load(f)
 
