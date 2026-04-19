@@ -86,7 +86,7 @@ python scripts/benchmark_checkout_mongo.py --iterations 1500 --warmup 100 \
   --json-out openapi/performance_results_mongo.json
 ```
 
-- **`docker-compose.yml`** publishes **27017** and persists data in a named volume (`mongo_bench_data`).
+- **`docker-compose.yml`** publishes **27017** and stores data in **`tmpfs`** (RAM) by default so the stack works on disk-constrained hosts; data is cleared when the container is recreated — **re-run `seed_mongo_benchmark.py`** after `docker compose up`. To use a **named volume** on disk instead, follow the comments in `docker-compose.yml`.
 - Use database **`orderbuddy_bench`** (or another name) so bench data stays separate from a local **`orderbuddy`** dev database.
 - **`--clean-orders`** clears the `orders` collection before the timed loop (after env is set); use only against a disposable bench DB.
 
@@ -143,6 +143,7 @@ scripts/compare_openapi.py
 scripts/benchmark_checkout.py
 scripts/benchmark_checkout_mongo.py
 scripts/seed_mongo_benchmark.py
+scripts/build_akram_performance_doc.py  # regenerates ../../Akram_performance_benchmark.docx from openapi/performance_results*.json
 docker-compose.yml
 app/benchmark_fixtures.py
 app/openapi_compare.py
@@ -150,6 +151,23 @@ openapi/.gitignore
 openapi/performance_results.json
 openapi/performance_results_mongo.json
 ```
+
+## Regenerate `Akram_performance_benchmark.docx`
+
+From **`orderbuddy/checkout-api`** (if you are already there, do **not** run `cd orderbuddy/checkout-api` again—that path only exists relative to the **ORDER_BUDDY** repo root):
+
+```bash
+pip install -r requirements-dev.txt
+python scripts/build_akram_performance_doc.py
+```
+
+**`cd: no such file or directory: orderbuddy/checkout-api`:** Your shell prompt already shows `checkout-api`, so you are inside `orderbuddy/checkout-api`. A nested `orderbuddy/checkout-api` does not exist there. Stay in the current directory and run the commands above.
+
+**`ERROR: Invalid requirement: '#'`** from `pip`: Usually the install line was run with a trailing **`# comment`** in a context where the comment was **not** stripped (for example, some IDE “run line” actions pass the whole string to `pip`, so `#` is treated as a package name). Run **`pip install -r requirements-dev.txt`** alone on its own line, or use a real terminal so `#` is a shell comment.
+
+**`ModuleNotFoundError: No module named 'docx'`:** Install dev dependencies first (`python-docx` is listed in `requirements-dev.txt`).
+
+The generated Word file includes **performance plots** (latency + throughput) embedded from `openapi/performance_results.json` and `openapi/performance_results_mongo.json`; **`matplotlib`** is required for those figures.
 
 ## CI
 

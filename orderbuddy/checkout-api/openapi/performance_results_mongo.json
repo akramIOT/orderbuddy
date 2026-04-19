@@ -1,0 +1,17 @@
+{
+  "environment": "FastAPI TestClient + Motor, real MongoDB, mock payment; uri='mongodb://127.0.0.1:27017' db='orderbuddy_bench'",
+  "iterations": 15000,
+  "warmup": 1000,
+  "clean_orders_before_timed_run": false,
+  "unit": "ms",
+  "latency_ms": {
+    "min": 1.110999844968319,
+    "max": 77.96191703528166,
+    "mean": 1.9686348794959485,
+    "stdev": 1.603773016675437,
+    "p50": 1.66599964722991,
+    "p95": 3.2315750373527403,
+    "p99": 6.541082249023022
+  },
+  "throughput_rps": 507.9662107053803
+}

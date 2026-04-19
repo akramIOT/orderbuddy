@@ -1,4 +1,9 @@
 # On-prem MongoDB for local checkout API + Mongo-backed benchmarks.
+#
+# Default: data in tmpfs (RAM) — survives restarts of the container only; re-run seed after
+# `docker compose up`. Use this when you want minimal disk use or hit "no space left on device"
+# on Docker volumes. For persistent data on disk, comment tmpfs and uncomment `volumes:` below.
+#
 # Usage (from this directory):
 #   docker compose up -d
 #   export MONGODB_URI=mongodb://127.0.0.1:27017 MONGODB_DB=orderbuddy_bench
@@ -11,8 +16,11 @@ services:
     container_name: orderbuddy-mongo-bench
     ports:
       - "27017:27017"
-    volumes:
-      - mongo_bench_data:/data/db
+    tmpfs:
+      - /data/db
+    # Persistent disk (optional — remove tmpfs above when using this):
+    # volumes:
+    #   - mongo_bench_data:/data/db
     environment:
       MONGO_INITDB_DATABASE: orderbuddy_bench
     healthcheck:
@@ -23,5 +31,6 @@ services:
       start_period: 10s
     restart: unless-stopped
 
-volumes:
-  mongo_bench_data:
+# Uncomment when using the persistent volume above:
+# volumes:
+#   mongo_bench_data:
