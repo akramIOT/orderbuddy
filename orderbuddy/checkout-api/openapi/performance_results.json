@@ -1,0 +1,16 @@
+{
+  "environment": "FastAPI TestClient, in-memory fake MongoDB, mock payment",
+  "iterations": 1500,
+  "warmup": 100,
+  "unit": "ms",
+  "latency_ms": {
+    "min": 0.49558328464627266,
+    "max": 9.464624803513288,
+    "mean": 0.6709831474969784,
+    "stdev": 0.3694722692912398,
+    "p50": 0.6076665595173836,
+    "p95": 0.8767108898609874,
+    "p99": 1.3217249838635317
+  },
+  "throughput_rps": 1490.3503966237888
+}
